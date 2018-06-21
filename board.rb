@@ -45,12 +45,13 @@ class Board
     end
   end
 
-
   def size
-    grid.size
+    rows.length
   end
 
-  alias_method :rows, :size
+  def rows
+    grid
+  end
 
   def solved?
     rows.all? { |row| solved_set?(row) } &&
